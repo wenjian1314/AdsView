@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    testCompile 'junit:junit:4.12'
+
+    //fastjson
+    compile 'com.alibaba:fastjson:1.2.9'
+
+    //图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //网络请求
+    compile 'com.loopj.android:android-async-http:1.4.9'
+
+    //图片banner
+    compile 'com.youth.banner:banner:1.4.6'
+
+    //进度条
+    compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+}
