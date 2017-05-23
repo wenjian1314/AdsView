@@ -16,5 +16,5 @@ public interface Constant {
      * 刷新数据的时间间隔
      * 毫秒
      */
-    long interval = 1 * 1000;
+    long interval = 60 * 5 * 1000;
 }

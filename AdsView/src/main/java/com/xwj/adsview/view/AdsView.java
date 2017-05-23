@@ -22,7 +22,6 @@ import com.xwj.adsview.bean.AdsInfo;
 import com.xwj.adsview.bean.Constant;
 import com.xwj.adsview.bean.ResponseData;
 import com.xwj.adsview.exception.ParseResponseException;
-import com.xwj.adsview.fragment.AdsFragment;
 import com.xwj.adsview.fragment.BannerFragment;
 import com.xwj.adsview.fragment.VideoFragment;
 import com.xwj.adsview.utils.HttpUtils;
@@ -215,5 +214,13 @@ public class AdsView extends LinearLayout {
      */
     public void setFragmentManager(FragmentManager fragmentManager) {
         this.fragmentManager = fragmentManager;
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        if (timer != null) {
+            timer.cancel();
+        }
+        super.onDetachedFromWindow();
     }
 }
