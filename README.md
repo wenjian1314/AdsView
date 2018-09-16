@@ -28,3 +28,5 @@ adsView.setFragmentManager(getSupportFragmentManager());
 ```
 
 ## 若想添加自定义功能，请直接fork项目
+
+#### 若有任何疑问，可邮件联系wenjian881314@163.com
